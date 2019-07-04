@@ -7,9 +7,23 @@
 function nestedForLoops (depth, width = depth) {
   let result = "\n";
 
-  // Write code here
+  let final = "";
 
+  // Write code here
+  for(y = 0; y < depth; y++) {
+    for(x = 0; x < width; x++) {
+      let str = `{x:${x}, y:${y}}`;
+      result += str;
+      if(x < width - 1) {
+        result += ", ";
+      }
+    }
+    result = result + "\n";
+    final = result
+  }
+
+  return final;
 };
 
 // To see your console output outside the tests add function calls here.
-// console.log(nestedForLoops(4));
+console.log(nestedForLoops(3));
